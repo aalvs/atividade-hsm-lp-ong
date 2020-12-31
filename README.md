@@ -31,7 +31,9 @@ Você pode customizar a folha de estilos de sua aplicação como bem lhe agradar
 - Criar projetos, classes e models Angular CLI;
 - Passagem de dados entre componentes usando @Input e @Output properties;
 - Trabalhar com Formulários Template Driven (ngForm, ngSubmit e ngModel);
-- Trabalhar com formulários Reativos (Data Driven).
+- Trabalhar com formulários Reativos (Data Driven);
+- Validações de campos usando REGEX;
+- Verificação de dados do formulário no template com JSON;
 
 # 💻 Tecnologias
 

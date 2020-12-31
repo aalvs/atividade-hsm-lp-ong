@@ -7,13 +7,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ConteudoComponent } from './conteudo/conteudo.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
+import { FormDebugComponent } from './cadastro/form-debug/form-debug.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ConteudoComponent,
-    CadastroComponent
+    CadastroComponent,
+    ModalComponent,
+    FormDebugComponent
   ],
   imports: [
     BrowserModule,

@@ -15,9 +15,9 @@ div.formTitle h4 {
 }
 ul.ipGroup {
     width: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 1em;
 }
 li.ipItem {
@@ -25,29 +25,52 @@ li.ipItem {
     flex-direction: column;
 }
 li.ipItem label {
-    font-size: 0.8em;
+    font-size: 12px;
     font-weight: 400;
     color: #8c8c8c
 }
 li.ipItem input {
     width: 200px;
     padding: 10px;
-    border: 1px solid #c8c8c8;
+    border: 1px solid;
+    border-color: #c8c8c8;
     border-radius: 4px;
 }
-li.btnSub input {
+li.btnSub button {
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     background-color: #29b6d1;
     padding: 10px 22px;
+    margin-top: 16px;
     border-radius: 4px;
     cursor: pointer;
     border: none;
 }
-li.btnSub input:hover {
+li.btnSub button:hover {
     opacity: 0.9;
 }
+li.btnSub button:disabled {
+    background-color: #ddd;
+    color: #8c8c8c;
+}
+.ng-invalid.ng-touched:not(form) {
+    border-color: tomato !important;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.alert {
+    background-color: var(--color-alert);
+    color: tomato;
+    padding-top: 6px;
+    width: max-content;
+    font-size: 12px;
+    font-weight: 300;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     form {
         flex-direction: column;
@@ -55,8 +78,5 @@ li.btnSub input:hover {
     }
     ul.ipGroup {
         flex-direction: column;
-    }
-    li.ipItem input {
-        
     }
 }

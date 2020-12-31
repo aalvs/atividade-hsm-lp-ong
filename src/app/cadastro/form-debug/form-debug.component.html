@@ -1,0 +1,14 @@
+<div class="wrapper c-debug" *ngIf="form">
+    <div>
+        <h4>Detalhes do formulário</h4>
+    </div>
+    <pre>
+        Form válido: {{ form.valid }}
+    </pre>
+    <pre>
+        Form submetido: {{ form.submitted }}
+    </pre>
+    <pre>
+        Valores: {{ form.value | json }}
+    </pre>
+</div>

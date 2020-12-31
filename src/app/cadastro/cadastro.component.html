@@ -1,20 +1,36 @@
 <section class="newsletter wrapper">
-    <form (ngSubmit)="onSubmit()">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
         <div class="formTitle">
             <h4>Receba nossa newsletter e fique por dentro das nossas ações!</h4>
         </div>
         <ul class="ipGroup">
             <li class="ipItem">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]="usuario.nome">
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" minlength="2" required 
+                [(ngModel)]="usuario.nome" #userName="ngModel"
+                [ngClass]="userName.errors?.required && userName.touched ? 'capitalize error' : 'capitalize'">
+                <ul *ngIf="userName.touched && !userName.valid">
+                    <li *ngIf="userName.errors?.required" class="alert">Esse campo é obrigatório!</li>
+                    <li *ngIf="userName.errors?.minlength" class="alert">Esse campo exige mais caracteres!</li>
+                </ul>
             </li>
             <li class="ipItem">
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder="Digite seu email" [(ngModel)]="usuario.email">
+                <input type="email" name="email" id="email" placeholder="Digite seu email" minlength="3" email required
+                [(ngModel)]="usuario.email" #userEmail="ngModel"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                [ngClass]="userEmail.errors?.required  && userEmail.touched ? 'error' : null">
+                <ul *ngIf="userEmail.touched && !userEmail.valid">
+                    <li *ngIf="userEmail.errors?.required" class="alert">Esse campo é obrigatório!</li>
+                    <li *ngIf="userEmail.errors?.pattern" class="alert">Esse não é um email válido!</li>
+                    <li *ngIf="userEmail.errors?.minlength" class="alert">Esse campo exige mais caracteres!</li>
+                </ul>
             </li>
             <li class="btnSub">
-                <input type="submit" value="Cadastar">
+                <button type="submit" [ngClass]="f.valid ? 'null' : 'disabled-button'"
+                [disabled]="f.invalid">Cadastrar</button>
             </li>
         </ul>
     </form>
 </section>
+<app-form-debug [form]="f"></app-form-debug>
