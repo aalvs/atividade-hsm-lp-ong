@@ -1,0 +1,62 @@
+section.newsletter {
+    background-color: #f6f6f6;
+    border-radius: 8px;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+div.formTitle h4 {
+    width: 90%;
+    color: #00c7c7;
+    font-size: 1.4em;
+}
+ul.ipGroup {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1em;
+}
+li.ipItem {
+    display: flex;
+    flex-direction: column;
+}
+li.ipItem label {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #8c8c8c
+}
+li.ipItem input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+}
+li.btnSub input {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #29b6d1;
+    padding: 10px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+li.btnSub input:hover {
+    opacity: 0.9;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    form {
+        flex-direction: column;
+        padding: 0;
+    }
+    ul.ipGroup {
+        flex-direction: column;
+    }
+    li.ipItem input {
+        
+    }
+}

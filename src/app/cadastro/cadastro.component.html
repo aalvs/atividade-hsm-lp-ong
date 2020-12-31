@@ -1,0 +1,20 @@
+<section class="newsletter wrapper">
+    <form (ngSubmit)="onSubmit()">
+        <div class="formTitle">
+            <h4>Receba nossa newsletter e fique por dentro das nossas ações!</h4>
+        </div>
+        <ul class="ipGroup">
+            <li class="ipItem">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]="usuario.nome">
+            </li>
+            <li class="ipItem">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" [(ngModel)]="usuario.email">
+            </li>
+            <li class="btnSub">
+                <input type="submit" value="Cadastar">
+            </li>
+        </ul>
+    </form>
+</section>
