@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ConteudoComponent } from './conteudo/conteudo.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { FormsModule } from '@angular/forms';
-import { ModalComponent } from './modal/modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDebugComponent } from './cadastro/form-debug/form-debug.component';
+import { ModalComponent } from './modal/modal.component';
+import { IMaskModule } from 'angular-imask';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FormDebugComponent } from './cadastro/form-debug/form-debug.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    IMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

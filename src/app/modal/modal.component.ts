@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  @Input() toggleStatus;
+
+  formModal: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    /*this.formModal = new FormGroup({
+      nome: new FormControl(null),
+      email: new FormControl(null),
+      telefone: new FormControl(null),
+      cpf: new FormControl(null)
+    });*/
+
+    this.formModal = this.formBuilder.group({
+      nome: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      telefone: ['', Validators.required],
+      cpf: ['', Validators.required]
+    });
+
   }
+
 
 }

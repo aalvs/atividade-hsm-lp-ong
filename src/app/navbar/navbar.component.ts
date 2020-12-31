@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  onModal: boolean =  false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleModal() {
+    this.onModal = !this.onModal;
+    console.log(this.onModal);
+  }
 }
