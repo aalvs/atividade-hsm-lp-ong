@@ -1,19 +1,51 @@
 <div class="modal" *ngIf="toggleStatus">
-    <form [formGroup]="formModal">
-        <ul>
-            <li>
+    <form [formGroup]="formModal" (ngSubmit)="login()">
+        <ul class="ipGroup">
+            <li class="ipItem">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Digite seu nome" required
-                formControlName="nome">
+                formControlName="nome"
+                [ngClass]="formModal.get('nome').invalid  && formModal.get('nome').touched ? 'red-border' : null">
+                <ul *ngIf="formModal.get('nome').touched">
+                    <li *ngIf="formModal.get('nome').getError('minlength')" class="alert">Esse campo requer mais caracteres!</li>
+                    <li *ngIf="formModal.get('nome').getError('required')" class="alert">Esse campo é obrigatório!</li>
+                </ul>
             </li>
-            <li>
+            <li class="ipItem">
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Digite seu email" required
-                formControlName="email">
+                formControlName="email"
+                [ngClass]="formModal.get('email').invalid  && formModal.controls['email'].touched ? 'red-border' : null">
+                <ul *ngIf="formuModal.controls['email'].touched">
+                    <li *ngIf="formModal.controls['email'].getError('required')" class="alert">Esse campo é obrigatório!</li>
+                    <li *ngIf="formModal.controls['email'].invalid" class="alert">Esse não é um email válido!</li>
+                </ul>
+            </li>
+            <li class="ipItem">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000" required
+                formControlName="telefone" pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$"
+                [imask]="{mask: telMask}"
+                [ngClass]="formModal.get('telefone').invalid  && formModal.get('telefone').touched ? 'red-border' : null">
+                <ul *ngIf="formModal.get('telefone').touched">
+                    <li *ngIf="formModal.get('telefone').getError('required')" class="alert">Esse campo é obrigatório!</li>
+                    <li *ngIf="formModal.get('telefone').invalid" class="alert">Esse não é um telefone válido!</li>
+                </ul>
+            </li>
+            <li class="ipItem">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" required
+                formControlName="cpf" maxlength="14"
+                [imask]="{mask: cpfMask}"
+                [ngClass]="formModal.get('cpf').invalid  && formModal.controls['cpf'].touched ? 'red-border' : null">
+                <ul *ngIf="formModal.get('cpf').touched">
+                    <li *ngIf="formModal.get('cpf').getError('required')" class="alert">Esse campo é obrigatório!</li>
+                    <li *ngIf="formModal.get('cpf').invalid" class="alert">Esse não é um CPF válido!</li>
+                </ul>
             </li>
             <li class="btnSub">
                 <button type="submit" [ngClass]="formModal.valid ? 'null' : 'disabled-button'"
-                [disabled]="formModal.invalid">Cadastrar</button>
+                [disabled]="formModal.invalid">Entrar</button>
             </li>
         </ul>
     </form>

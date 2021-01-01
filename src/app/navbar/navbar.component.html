@@ -4,9 +4,9 @@
             <h1>HappyKids</h1>
         </div>
         <div class="acess">
-            <button *ngIf="!onModal" (click)="toggleModal()">Entrar</button>
-            <button *ngIf="onModal" (click)="toggleModal()">Fechar</button>
+            <button *ngIf="!onModal" (click)="toggleModal()" class="relative-pos">Entrar</button>
+            <button *ngIf="onModal" (click)="toggleModal()" class="relative-pos">Fechar</button>
         </div>
     </div>
-    <app-modal [toggleStatus]="onModal"></app-modal>
 </nav>
+<app-modal [toggleStatus]="onModal"></app-modal>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from './shared/usuario';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,19 +7,19 @@ import { Usuario } from './shared/usuario';
 })
 export class CadastroComponent implements OnInit {
 
-  usuario: Usuario;
-
-  nome: string;
-  email: string;
+  usuario: any = {
+    nome: null,
+    email: null
+  }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.usuario = new Usuario();
   }
 
-  onSubmit() {
+  onSubmit(form) {
     console.log(this.usuario);
+    form.form.reset();
   }
 
 }

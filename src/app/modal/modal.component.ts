@@ -30,6 +30,21 @@ export class ModalComponent implements OnInit {
       cpf: ['', Validators.required]
     });
 
+    
+
+  }
+
+  cpfMask: string = '000.000.000-00';
+  telMask: string = '(00) 00000-0000';
+
+  login() {
+    console.warn(this.formModal.value)
+    if (this.formModal.status == 'VALID') {
+      console.log('Bem vindo, Tony Stark!');
+      this.formModal.reset();
+    } else {
+      console.log('Deu ruim!');
+    }
   }
 
 
