@@ -77,14 +77,13 @@ li.btnSub button:disabled {
     background-color: #ddd;
     color: #8c8c8c;
 }
+.red-border {
+    border: 1px solid tomato !important;
+}
 .alert {
-    background-color: var(--color-alert);
     color: tomato;
     padding-top: 6px;
     width: max-content;
     font-size: 12px;
     font-weight: 300;
-}
-.ng-invalid.ng-touched:not(form) {
-    border-color: tomato !important;
 }

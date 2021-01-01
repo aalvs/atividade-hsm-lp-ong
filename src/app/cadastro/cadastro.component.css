@@ -63,7 +63,6 @@ li.btnSub button:disabled {
 }
 
 .alert {
-    background-color: var(--color-alert);
     color: tomato;
     padding-top: 6px;
     width: max-content;

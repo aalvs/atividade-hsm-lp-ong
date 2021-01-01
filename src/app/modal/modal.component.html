@@ -16,7 +16,7 @@
                 <input type="email" id="email" placeholder="Digite seu email" required
                 formControlName="email"
                 [ngClass]="formModal.get('email').invalid  && formModal.controls['email'].touched ? 'red-border' : null">
-                <ul *ngIf="formuModal.controls['email'].touched">
+                <ul *ngIf="formModal.controls['email'].touched">
                     <li *ngIf="formModal.controls['email'].getError('required')" class="alert">Esse campo é obrigatório!</li>
                     <li *ngIf="formModal.controls['email'].invalid" class="alert">Esse não é um email válido!</li>
                 </ul>

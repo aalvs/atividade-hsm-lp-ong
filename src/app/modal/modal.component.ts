@@ -29,9 +29,6 @@ export class ModalComponent implements OnInit {
       telefone: ['', Validators.required],
       cpf: ['', Validators.required]
     });
-
-    
-
   }
 
   cpfMask: string = '000.000.000-00';
@@ -40,7 +37,7 @@ export class ModalComponent implements OnInit {
   login() {
     console.warn(this.formModal.value)
     if (this.formModal.status == 'VALID') {
-      console.log('Bem vindo, Tony Stark!');
+      console.log(`Bem-vindo, ${this.formModal.get('nome').value}!`);
       this.formModal.reset();
     } else {
       console.log('Deu ruim!');
